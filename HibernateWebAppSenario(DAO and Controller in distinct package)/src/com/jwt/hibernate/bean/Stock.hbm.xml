@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.jwt.hibernate.bean.Stock" table="stock" catalog="jwt">
+        <id name="stockId" type="java.lang.Integer">
+            <column name="stockId" />
+            <generator class="identity" />
+        </id>
+        <property name="stockCode" type="string">
+            <column name="stockCode" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="stockName" type="string">
+            <column name="stockName" length="20" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>
